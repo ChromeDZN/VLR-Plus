@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "VLR+",
+  "version": "1.51",
+  "description": "Customize VLR.gg to your liking!",
+  "icons": {
+    "16": "vlr16.ico",
+    "32": "vlr32.ico",
+    "48": "vlr48.ico",
+    "128": "vlr128.ico"
+  },
+  "content_scripts": [{
+    "css": ["vlrplus.css"],
+    "js": ["jquery.js", "script.js"],
+    "matches": ["https://www.vlr.gg/*"]
+  }]
+}
