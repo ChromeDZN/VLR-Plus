@@ -1,8 +1,6 @@
 // ==UserScript==
 // @name               VLR Plus
-// @name:zh-CN         VLR Plus
 // @description        Optimizes VLR.gg for better features
-// @description:zh-CN  优化 VLR.gg 以获得更好的功能
 // @author             ChromeDZN
 // @version            1.5
 // @license            GPL-3.0-or-later
