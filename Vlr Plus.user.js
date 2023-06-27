@@ -2,7 +2,7 @@
 // @name               VLR Plus
 // @description        Optimizes VLR.gg for better features
 // @author             ChromeDZN
-// @version            1.5
+// @version            1.6
 // @license            GPL-3.0-or-later
 // @namespace          ChromeDZN/Userscripts
 // @supportURL         https://chrome.google.com/webstore/detail/vlr%20/mdkhidfehffakccameellfomknpaoahn
@@ -816,111 +816,29 @@ if (url.startsWith("https://www.vlr.gg/player")) {
 // });
 
 $(document).ready(function() {
-  $('.post-editor-header').each(function() {
+  $.get("https://snippet.host/zcchqa/raw", function (data) {  
     var emojiIcon = $('<div class="emoji-icon" style="cursor: pointer;font-size: 20px;width: 24px;height: 24px;line-height: 24px;text-align: center;border-radius: 4px;">&#x1F603;</div>');
-    var emojiModal = $('<div class="emoji-modal" style="position: absolute;z-index: 999999999999999;top: 34px;right: 0;width: 200px;background-color: rgba(123, 123, 123, 0.1);backdrop-filter: blur(10px);border: 1px solid #ddd;border-radius: 4px;padding: 8px;box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);display: none;overflow-y: scroll;max-height: 200px;">' +
-    '<p>Team Emojis</p>' +
-    '<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="//owcdn.net/img/628addcbd509e.png" alt=":c9;">' +
-    '<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="//owcdn.net/img/62a409ad29351.png" alt=":eg;">' +
-    '<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="//owcdn.net/img/62875027c8e06.png" alt=":sen;">' +
-    '<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="//owcdn.net/img/603c00d5c5a08.png" alt=":100t;">' +
-    '<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="//owcdn.net/img/62874d7ac0534.png" alt=":nrg;">' +
-    '<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="//owcdn.net/img/63976677069e1.png" alt=":kru;">' +
-    '<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="//owcdn.net/img/61b8888cc3860.png" alt=":lev;">' +
-    '<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="//owcdn.net/img/62bbec8dc1b9f.png" alt=":loud;">' +
-    '<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="//owcdn.net/img/632be7626d6d9.png" alt=":mibr;">' +
-    '<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="//owcdn.net/img/632be843b7d51.png" alt=":fur;">' +
-    '<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="//owcdn.net/img/62fe0b8f6b084.png" alt=":t1;">' +
-    '<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="//owcdn.net/img/63b17abd77fc0.png" alt=":drx;">' +
-    '<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="//owcdn.net/img/62a1d44914aa9.png" alt=":geng;">' +
-    '<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="//owcdn.net/img/62bbeba74d5cb.png" alt=":prx;">' +
-    '<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="//owcdn.net/img/629f316ddd4dd.png" alt=":ge;">' +
-    '<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="//owcdn.net/img/629f17f51e7a3.png" alt=":rrq;">' +
-    '<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="//owcdn.net/img/63972e548cdc9.png" alt=":dfm;">' +
-    '<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="//owcdn.net/img/62a411783d94d.png" alt=":zeta;">' +
-    '<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="//owcdn.net/img/629f13085ead6.png" alt=":ts;">' +
-    '<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="//owcdn.net/img/6226f3d764e03.png" alt=":tln;">' +
-    '<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="//owcdn.net/img/640c381f0603f.png" alt=":tl;">' +
-    '<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="//owcdn.net/img/62a40cc2b5e29.png" alt=":fnc;">' +
-    '<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="//owcdn.net/img/62a4109ddbd7f.png" alt=":navi;">' +
-    '<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="//owcdn.net/img/632be9976b8fe.png" alt=":fut;">' +
-    '<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="//owcdn.net/img/6466d79e1ed40.png" alt=":vit;">' +
-    '<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="//owcdn.net/img/6346b8ad2331d.png" alt=":koi;">' +
-    '<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="//owcdn.net/img/627403a0d9e48.png" alt=":kc;">' +
-    '<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="//owcdn.net/img/637b755224c12.png" alt=":th;">' +
-    '<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="//owcdn.net/img/634b4412d95b3.png" alt=":bbl;">' +
-    '<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="//owcdn.net/img/61dfcae52b0d8.png" alt=":gia;">' +
-    '<p>Pepes</p>' +
-    '<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/0fc8cd8f-bc87-4f06-a4ca-84b35b3daf2d.gif" alt=":pepenoob;">' +
-    '<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/a871d706-578b-4b1e-b56b-ea7bde6e14fd.GIF" alt=":pepehappy;">' +
-    '<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/0e63fbc0-33a4-45be-8c90-d733c535e0db.png" alt=":peperage;">' +
-    '<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/14e5562c-c368-4c40-8d67-3cc84f04f269.GIF" alt=":pepeclap;">' +
-    '<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/4548f68f-ef3b-4e6f-a307-e6ff778284e1.PNG" alt=":pepehide;">' +
-    '<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/edcbf71c-04ba-44ee-812d-b66550ac72f0.GIF" alt=":pepelaugh;">' +
-    '<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/0d1d3ac4-c8e0-49cf-b02b-37224347133b.GIF" alt=":pepesteer;">' +
-    '<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/c3617497-81c1-4e37-a5c4-7f50853795cd.PNG" alt=":pepefeelsbad;">' +
-    '<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/7b856dcc-ce74-4ee4-a770-081a55ba3ad5.GIF" alt=":pepelaser;">' +
-    '<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/e4890f2e-65c3-49a3-83a8-e191be0e53d1.webp" alt=":pepeyes;">' +
-    '<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/2b17a3b6-ca67-4d2c-a9b9-a07b6fe582a9.gif" alt=":pepepog;">' +
-    '<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/PepeKMS.png" alt=":pepekms;">' +
-    '<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/04a7b8f4-fa23-472c-9373-365fe561ad5d.png" alt=":pepemad;">' +
-    '<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/4b8a69a1-c7f8-49fe-851c-2ff90f2a3912.png" alt=":pepethink;">' +
-    '<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/037fa260-56cf-4503-ac14-d25a082ec590.png" alt=":pepeno;">' +
-    '<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/ed2b4409-16e4-4810-8372-eaf71553bfc0.gif" alt=":pepelmao;">' +
-    '<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/b07d109f-4b79-4df2-9f11-4a158809f7b3.gif" alt=":pepeshoot;">' +
-    '<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/0eadc90a-2017-44cc-a9a4-9937cdd06c3e.png" alt=":pepecry;">' +
-    '<p>Agents</p>' +
-    '<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/9208e8c8-e055-4dd9-aed4-8135c43d66ef.PNG" alt=":phoenix;">' +
-'<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/bd1caa1d-b711-43b5-99dd-700ea99920c2.PNG" alt=":astra;">' +
-'<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/b3572b7a-afbc-44b9-8d6a-191baf3b760e.PNG" alt=":raze;">' +
-'<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/2786e758-8898-4e3b-8b54-b3919aea471a.PNG" alt=":cypher;">' +
-'<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/c19223d9-5c77-448a-bdd8-54e5af724765.PNG" alt=":yoru;">' +
-'<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/f6cf98e0-6c7f-4577-b623-4bc02295e556.PNG" alt=":fade;">' +
-'<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/6b23e9f8-74e2-487e-b29f-86e9324585ae.PNG" alt=":reyna;">' +
-'<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/22796c30-232d-4cb6-9be9-f9eb5d681a0b.PNG" alt=":omen;">' +
-'<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/b7232996-34e3-4321-a539-d3edecc04df0.PNG" alt=":brimstone;">' +
-'<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/f7c9f441-d4a1-4f39-9472-706372b01cda.PNG" alt=":kayo;">' +
-'<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/eac4792e-e46b-4e68-9eba-f8cb5bd15b7f.PNG" alt=":breach;">' +
-'<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/1da15151-6320-4249-a07b-8ca0cf0c4e7a.PNG" alt=":sova;">' +
-'<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/60ee1673-3b02-451b-839f-455abc283aa2.PNG" alt=":killjoy;">' +
-'<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/9ed08f69-8a79-45e7-a92c-f7eaadf86296.PNG" alt=":sage;">' +
-'<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/1afc5190-8418-4ab1-95bb-81e12fcf5527.PNG" alt=":viper;">' +
-'<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/91a8df3f-f262-448f-bfe1-497e946e3c5b.PNG" alt=":skye;">' +
-'<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/59377212-8498-497d-b298-758ff54d2bd4.PNG" alt=":jett;">' +
-'<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/fd0e7f3d-99e0-4ce6-810d-01a98661f9e2.png" alt=":harbor;">' +
-'<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/2270f0d0-8f0b-4d28-9a48-ad023c4ca2ac.png" alt=":gekko;">' +
-'<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/358f33f4-afe0-4c3f-be31-e5f95d1a9832.PNG" alt=":neon;">' +
-'<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/a994f2cb-f48b-43dc-8313-a23f39d2cdde.PNG" alt=":chamber;">' +
-'<p>Other</p>' +
-'<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/788f3a39-7ecf-4aee-bac0-d7c0dbbf02a3.gif" alt=":anime;">' +
-'<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/9fa603df-4864-439b-b78d-544c7f78cdca.gif" alt=":dance;">' +
-'<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/45a3f5e5-be26-42bd-bbe3-14e13d2a82b3.gif" alt=":smart;">' +
-'<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/9b48b483-f8a9-45bd-8bcf-f5b64ed01945.webp" alt=":catyes;">' +
-'<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/huh.png" alt=":huh;">' +
-'<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/d5fd8082-f98c-41df-9163-d08cb3c5c135.png" alt=":kekw;">' +
-'<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/4f2f6d20-94a5-44b0-924e-8cd2331f11dd.png" alt=":f;">' +
-'<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/whatthe.png" alt=":what;">' +
-'<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/2697f46a-8866-4475-b9b8-ea9a1ee4db47.png" alt=":gunpoint;">' +
-'<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/4db3729c-92a1-472b-b25d-d3a0a8a46945.png" alt=":why;">' +
-'<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/b589f1f4-4f73-4e30-9e39-5b47dd8b7f68.PNG" alt=":pikalaugh;">' +
-'<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/09b15aed-74ae-4412-95e8-848bd1abf7e7.gif" alt=":fire;">' +
-'<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/thonk.png" alt=":thonk;">' +
-'<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/d8c2ee15-06fa-43c5-8996-515431b746b0.webp" alt=":trollface;">' +
-'<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/7aa79b98-dda6-4e01-9869-f6100f8683fc.png" alt=":jerry;">' +
-'<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/a898c69b-048e-44b4-a837-b508a5bd1de9.png" alt=":bruh;">' +
-'<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/757ccf41-e1f1-4243-82dc-0b662a324b94.png" alt=":kekyou;">' +
-'<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/bc310bc3-6cb8-4279-860d-c4fdb7162848.png" alt=":pain;">' +
-'<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/79a2692d-6534-4eec-9369-62713a5a5c94.gif" alt=":youtried;">' +
-'<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="https://emoji.discadia.com/emojis/667a49eb-df03-44ff-adf4-aec2c6ba5abe.PNG" alt=":gigachad;">' +
-'</div>');
+    var emojiModal = $(data);
+    emojiModal.css('display', 'none');
+    emojiModal.css('z-index', '999999999999999');
+    emojiModal.css('width', '100%');
+    emojiModal.css('background-color', 'rgba(123, 123, 123, 0.1)');
+    emojiModal.css('backdrop-filter', 'blur(10px)');
+    emojiModal.css('border', '1px solid #ddd');
+    emojiModal.css('border-radius', '4px');
+    emojiModal.css('padding', '8px');
+    emojiModal.css('box-shadow', '0 2px 4px rgba(0, 0, 0, 0.1)');
+    emojiModal.css('overflow-y', 'scroll');
+    emojiModal.css('max-height', '200px');
+    
+
 
   
-      if ($(this).find('.emoji-icon').length === 0) {
-    $(this).append(emojiIcon);
-    $(this).append(emojiModal);
-      }
+    $('.post-editor-header').append(emojiIcon);
+    $('.post-editor-header').append(emojiModal);
+
     $('.emoji-icon').click(function() {
-      $(this).next('.emoji-modal').toggle();
+      $(this).next('.emoji-modal').slideToggle();
     });
 
     $('.emoji-modal').find('.emoji').click(function() {
@@ -949,7 +867,7 @@ $('.reply-btn').click(function() {
   //   $(this).append(emojiModal);
   //     }
     $('.emoji-icon').click(function() {
-      $(this).next('.emoji-modal').toggle();
+      $(this).next('.emoji-modal').slideToggle();
     });
 
     $('.emoji-modal').find('.emoji').click(function() {
@@ -961,111 +879,47 @@ $('.reply-btn').click(function() {
       var inputValue = input.val();
       var updatedValue = inputValue.substring(0, startPos) + emoji + inputValue.substring(endPos);
       input.val(updatedValue);
-      $(this).parent().hide();
     });
+    $('.post-editor-header-preview').click(function() {
+      $('.emoji-modal').hide();
+      //wait 5 seconds 
+      setTimeout(function () {
+       $.get("https://snippet.host/ekiscp/raw", function (data) {
+        var emojiDictionary = JSON.parse(data);
+        $('.post-body').children().each(function() {
+          var text = $(this).text();
+          console.log(text);
+          var matches = text.match(/:([\w-]+);/g);
+          
+          if (matches) {
+            matches.forEach(function(match) {
+              var emojiName = match.slice(1, -1); // Remove the leading ":" and trailing ";"
+              var emojiUrl = emojiDictionary[emojiName];
+              if (emojiUrl) {
+                var imageTag = '<img class="emoji" style="height:23px;width:23px;border-radius: 0px !important;cursor: pointer;margin: 4px;" src="' + emojiUrl + '">';
+                text = text.replace(match, imageTag);
+              }
+            });
+            
+            $(this).html(text);
+            $(this).css({
+              'display': 'flex',
+              'align-items': 'center',
+              'flex-wrap': 'wrap'
+            });
+          
+            $(this).children().css('align-self', 'flex-end');
+          }
+        });
+      });
+      }, 500);
+      });
   // });
 });
 
 $(document).ready(function() {
-  var emojiDictionary = {
-    "eg": "//owcdn.net/img/62a409ad29351.png",
-    "sen": "//owcdn.net/img/62875027c8e06.png",
-    "c9": "//owcdn.net/img/628addcbd509e.png",
-    "100t": "//owcdn.net/img/603c00d5c5a08.png",
-    "nrg": "//owcdn.net/img/62874d7ac0534.png",
-    "kru": "//owcdn.net/img/63976677069e1.png",
-    "lev": "//owcdn.net/img/61b8888cc3860.png",
-    "loud": "//owcdn.net/img/62bbec8dc1b9f.png",
-    "mibr": "//owcdn.net/img/632be7626d6d9.png",
-    "fur": "//owcdn.net/img/632be843b7d51.png",
-
-    "t1": "//owcdn.net/img/62fe0b8f6b084.png",
-    "drx": "//owcdn.net/img/63b17abd77fc0.png",
-    "geng": "//owcdn.net/img/62a1d44914aa9.png",
-    "prx": "//owcdn.net/img/62bbeba74d5cb.png",
-    "ge": "//owcdn.net/img/629f316ddd4dd.png",
-    "rrq": "//owcdn.net/img/629f17f51e7a3.png",
-    "dfm": "//owcdn.net/img/63972e548cdc9.png",
-    "zeta": "//owcdn.net/img/62a411783d94d.png",
-    "ts": "//owcdn.net/img/629f13085ead6.png",
-    "tln": "//owcdn.net/img/6226f3d764e03.png",
-
-    "tl": "//owcdn.net/img/640c381f0603f.png",
-    "fnc": "//owcdn.net/img/62a40cc2b5e29.png",
-    "navi": "//owcdn.net/img/62a4109ddbd7f.png",
-    "fut": "//owcdn.net/img/632be9976b8fe.png",
-    "vit": "//owcdn.net/img/6466d79e1ed40.png",
-    "koi": "//owcdn.net/img/6346b8ad2331d.png",
-    "kc": "//owcdn.net/img/627403a0d9e48.png",
-    "th": "//owcdn.net/img/637b755224c12.png",
-    "bbl": "//owcdn.net/img/634b4412d95b3.png",
-    "gia": "//owcdn.net/img/61dfcae52b0d8.png",
-
-    //pepes
-    "pepenoob": "https://emoji.discadia.com/emojis/0fc8cd8f-bc87-4f06-a4ca-84b35b3daf2d.gif",
-    "pepehappy": "https://emoji.discadia.com/emojis/a871d706-578b-4b1e-b56b-ea7bde6e14fd.GIF",
-    "peperage": "https://emoji.discadia.com/emojis/0e63fbc0-33a4-45be-8c90-d733c535e0db.png",
-    "pepeclap": "https://emoji.discadia.com/emojis/14e5562c-c368-4c40-8d67-3cc84f04f269.GIF",
-    "pepehide": "https://emoji.discadia.com/emojis/4548f68f-ef3b-4e6f-a307-e6ff778284e1.PNG",
-    "pepelaugh": "https://emoji.discadia.com/emojis/edcbf71c-04ba-44ee-812d-b66550ac72f0.GIF",
-    "pepesteer": "https://emoji.discadia.com/emojis/0d1d3ac4-c8e0-49cf-b02b-37224347133b.GIF",
-    "pepefeelsbad": "https://emoji.discadia.com/emojis/c3617497-81c1-4e37-a5c4-7f50853795cd.PNG",
-    "pepelaser": "https://emoji.discadia.com/emojis/7b856dcc-ce74-4ee4-a770-081a55ba3ad5.GIF",
-    "pepeyes": "https://emoji.discadia.com/emojis/e4890f2e-65c3-49a3-83a8-e191be0e53d1.webp",
-    "pepepog": "https://emoji.discadia.com/emojis/2b17a3b6-ca67-4d2c-a9b9-a07b6fe582a9.gif",
-    "pepekms": "https://emoji.discadia.com/emojis/PepeKMS.png",
-    "pepemad": "https://emoji.discadia.com/emojis/04a7b8f4-fa23-472c-9373-365fe561ad5d.png",
-    "pepethink": "https://emoji.discadia.com/emojis/4b8a69a1-c7f8-49fe-851c-2ff90f2a3912.png",
-    "pepeno": "https://emoji.discadia.com/emojis/037fa260-56cf-4503-ac14-d25a082ec590.png",
-    "pepelmao": "https://emoji.discadia.com/emojis/ed2b4409-16e4-4810-8372-eaf71553bfc0.gif",
-    "pepeshoot": "https://emoji.discadia.com/emojis/b07d109f-4b79-4df2-9f11-4a158809f7b3.gif",
-    "pepecry": "https://emoji.discadia.com/emojis/0eadc90a-2017-44cc-a9a4-9937cdd06c3e.png",
-
-    //agents
-    "phoenix": "https://emoji.discadia.com/emojis/9208e8c8-e055-4dd9-aed4-8135c43d66ef.PNG",
-    "astra": "https://emoji.discadia.com/emojis/bd1caa1d-b711-43b5-99dd-700ea99920c2.PNG",
-    "raze": "https://emoji.discadia.com/emojis/b3572b7a-afbc-44b9-8d6a-191baf3b760e.PNG",
-    "cypher": "https://emoji.discadia.com/emojis/2786e758-8898-4e3b-8b54-b3919aea471a.PNG",
-    "yoru": "https://emoji.discadia.com/emojis/c19223d9-5c77-448a-bdd8-54e5af724765.PNG",
-    "fade": "https://emoji.discadia.com/emojis/f6cf98e0-6c7f-4577-b623-4bc02295e556.PNG",
-    "reyna": "https://emoji.discadia.com/emojis/6b23e9f8-74e2-487e-b29f-86e9324585ae.PNG",
-    "omen": "https://emoji.discadia.com/emojis/22796c30-232d-4cb6-9be9-f9eb5d681a0b.PNG",
-    "brimstone": "https://emoji.discadia.com/emojis/b7232996-34e3-4321-a539-d3edecc04df0.PNG",
-    "kayo": "https://emoji.discadia.com/emojis/f7c9f441-d4a1-4f39-9472-706372b01cda.PNG",
-    "breach": "https://emoji.discadia.com/emojis/eac4792e-e46b-4e68-9eba-f8cb5bd15b7f.PNG",
-    "sova": "https://emoji.discadia.com/emojis/1da15151-6320-4249-a07b-8ca0cf0c4e7a.PNG",
-    "killjoy": "https://emoji.discadia.com/emojis/60ee1673-3b02-451b-839f-455abc283aa2.PNG",
-    "sage": "https://emoji.discadia.com/emojis/9ed08f69-8a79-45e7-a92c-f7eaadf86296.PNG",
-    "viper": "https://emoji.discadia.com/emojis/1afc5190-8418-4ab1-95bb-81e12fcf5527.PNG",
-    "skye": "https://emoji.discadia.com/emojis/91a8df3f-f262-448f-bfe1-497e946e3c5b.PNG",
-    "jett": "https://emoji.discadia.com/emojis/59377212-8498-497d-b298-758ff54d2bd4.PNG",
-    "harbor": "https://emoji.discadia.com/emojis/fd0e7f3d-99e0-4ce6-810d-01a98661f9e2.png",
-    "gekko": "https://emoji.discadia.com/emojis/2270f0d0-8f0b-4d28-9a48-ad023c4ca2ac.png",
-    "neon": "https://emoji.discadia.com/emojis/358f33f4-afe0-4c3f-be31-e5f95d1a9832.PNG",
-    "chamber": "https://emoji.discadia.com/emojis/a994f2cb-f48b-43dc-8313-a23f39d2cdde.PNG",
-
-    //other
-    "anime": "https://emoji.discadia.com/emojis/788f3a39-7ecf-4aee-bac0-d7c0dbbf02a3.gif",
-    "dance": "https://emoji.discadia.com/emojis/9fa603df-4864-439b-b78d-544c7f78cdca.gif",
-    "smart": "https://emoji.discadia.com/emojis/45a3f5e5-be26-42bd-bbe3-14e13d2a82b3.gif",
-    "catyes": "https://emoji.discadia.com/emojis/9b48b483-f8a9-45bd-8bcf-f5b64ed01945.webp",
-    "huh": "https://emoji.discadia.com/emojis/huh.png",
-    "kekw": "https://emoji.discadia.com/emojis/d5fd8082-f98c-41df-9163-d08cb3c5c135.png",
-    "f": "https://emoji.discadia.com/emojis/4f2f6d20-94a5-44b0-924e-8cd2331f11dd.png",
-    "what": "https://emoji.discadia.com/emojis/whatthe.png",
-    "gunpoint": "https://emoji.discadia.com/emojis/2697f46a-8866-4475-b9b8-ea9a1ee4db47.png",
-    "why": "https://emoji.discadia.com/emojis/4db3729c-92a1-472b-b25d-d3a0a8a46945.png",
-    "pikalaugh": "https://emoji.discadia.com/emojis/b589f1f4-4f73-4e30-9e39-5b47dd8b7f68.PNG",
-    "fire": "https://emoji.discadia.com/emojis/09b15aed-74ae-4412-95e8-848bd1abf7e7.gif",
-    "thonk": "https://emoji.discadia.com/emojis/thonk.png",
-    "trollface": "https://emoji.discadia.com/emojis/d8c2ee15-06fa-43c5-8996-515431b746b0.webp",
-    "jerry": "https://emoji.discadia.com/emojis/7aa79b98-dda6-4e01-9869-f6100f8683fc.png",
-    "bruh": "https://emoji.discadia.com/emojis/a898c69b-048e-44b4-a837-b508a5bd1de9.png",
-    "kekyou": "https://emoji.discadia.com/emojis/757ccf41-e1f1-4243-82dc-0b662a324b94.png",
-    "pain": "https://emoji.discadia.com/emojis/bc310bc3-6cb8-4279-860d-c4fdb7162848.png",
-    "youtried": "https://emoji.discadia.com/emojis/79a2692d-6534-4eec-9369-62713a5a5c94.gif",
-    "gigachad": "https://emoji.discadia.com/emojis/667a49eb-df03-44ff-adf4-aec2c6ba5abe.PNG"
-  };
+  $.get("https://snippet.host/ekiscp/raw", function (data) {
+    var emojiDictionary = JSON.parse(data);
 
   $('.post-body').children().each(function() {
     var text = $(this).text();
@@ -1091,111 +945,14 @@ $(document).ready(function() {
       $(this).children().css('align-self', 'flex-end');
     }
   });
+  });
 });
 $('.post-editor-header-preview').click(function() {
 $('.emoji-modal').hide();
 //wait 5 seconds 
 setTimeout(function () {
-  var emojiDictionary = {
-    "eg": "//owcdn.net/img/62a409ad29351.png",
-    "sen": "//owcdn.net/img/62875027c8e06.png",
-    "c9": "//owcdn.net/img/628addcbd509e.png",
-    "100t": "//owcdn.net/img/603c00d5c5a08.png",
-    "nrg": "//owcdn.net/img/62874d7ac0534.png",
-    "kru": "//owcdn.net/img/63976677069e1.png",
-    "lev": "//owcdn.net/img/61b8888cc3860.png",
-    "loud": "//owcdn.net/img/62bbec8dc1b9f.png",
-    "mibr": "//owcdn.net/img/632be7626d6d9.png",
-    "fur": "//owcdn.net/img/632be843b7d51.png",
-
-    "t1": "//owcdn.net/img/62fe0b8f6b084.png",
-    "drx": "//owcdn.net/img/63b17abd77fc0.png",
-    "geng": "//owcdn.net/img/62a1d44914aa9.png",
-    "prx": "//owcdn.net/img/62bbeba74d5cb.png",
-    "ge": "//owcdn.net/img/629f316ddd4dd.png",
-    "rrq": "//owcdn.net/img/629f17f51e7a3.png",
-    "dfm": "//owcdn.net/img/63972e548cdc9.png",
-    "zeta": "//owcdn.net/img/62a411783d94d.png",
-    "ts": "//owcdn.net/img/629f13085ead6.png",
-    "tln": "//owcdn.net/img/6226f3d764e03.png",
-
-    "tl": "//owcdn.net/img/640c381f0603f.png",
-    "fnc": "//owcdn.net/img/62a40cc2b5e29.png",
-    "navi": "//owcdn.net/img/62a4109ddbd7f.png",
-    "fut": "//owcdn.net/img/632be9976b8fe.png",
-    "vit": "//owcdn.net/img/6466d79e1ed40.png",
-    "koi": "//owcdn.net/img/6346b8ad2331d.png",
-    "kc": "//owcdn.net/img/627403a0d9e48.png",
-    "th": "//owcdn.net/img/637b755224c12.png",
-    "bbl": "//owcdn.net/img/634b4412d95b3.png",
-    "gia": "//owcdn.net/img/61dfcae52b0d8.png",
-    
-    //pepes
-    "pepenoob": "https://emoji.discadia.com/emojis/0fc8cd8f-bc87-4f06-a4ca-84b35b3daf2d.gif",
-    "pepehappy": "https://emoji.discadia.com/emojis/a871d706-578b-4b1e-b56b-ea7bde6e14fd.GIF",
-    "peperage": "https://emoji.discadia.com/emojis/0e63fbc0-33a4-45be-8c90-d733c535e0db.png",
-    "pepeclap": "https://emoji.discadia.com/emojis/14e5562c-c368-4c40-8d67-3cc84f04f269.GIF",
-    "pepehide": "https://emoji.discadia.com/emojis/4548f68f-ef3b-4e6f-a307-e6ff778284e1.PNG",
-    "pepelaugh": "https://emoji.discadia.com/emojis/edcbf71c-04ba-44ee-812d-b66550ac72f0.GIF",
-    "pepesteer": "https://emoji.discadia.com/emojis/0d1d3ac4-c8e0-49cf-b02b-37224347133b.GIF",
-    "pepefeelsbad": "https://emoji.discadia.com/emojis/c3617497-81c1-4e37-a5c4-7f50853795cd.PNG",
-    "pepelaser": "https://emoji.discadia.com/emojis/7b856dcc-ce74-4ee4-a770-081a55ba3ad5.GIF",
-    "pepeyes": "https://emoji.discadia.com/emojis/e4890f2e-65c3-49a3-83a8-e191be0e53d1.webp",
-    "pepepog": "https://emoji.discadia.com/emojis/2b17a3b6-ca67-4d2c-a9b9-a07b6fe582a9.gif",
-    "pepekms": "https://emoji.discadia.com/emojis/PepeKMS.png",
-    "pepemad": "https://emoji.discadia.com/emojis/04a7b8f4-fa23-472c-9373-365fe561ad5d.png",
-    "pepethink": "https://emoji.discadia.com/emojis/4b8a69a1-c7f8-49fe-851c-2ff90f2a3912.png",
-    "pepeno": "https://emoji.discadia.com/emojis/037fa260-56cf-4503-ac14-d25a082ec590.png",
-    "pepelmao": "https://emoji.discadia.com/emojis/ed2b4409-16e4-4810-8372-eaf71553bfc0.gif",
-    "pepeshoot": "https://emoji.discadia.com/emojis/b07d109f-4b79-4df2-9f11-4a158809f7b3.gif",
-    "pepecry": "https://emoji.discadia.com/emojis/0eadc90a-2017-44cc-a9a4-9937cdd06c3e.png",
-
-        //agents
-        "phoenix": "https://emoji.discadia.com/emojis/9208e8c8-e055-4dd9-aed4-8135c43d66ef.PNG",
-        "astra": "https://emoji.discadia.com/emojis/bd1caa1d-b711-43b5-99dd-700ea99920c2.PNG",
-        "raze": "https://emoji.discadia.com/emojis/b3572b7a-afbc-44b9-8d6a-191baf3b760e.PNG",
-        "cypher": "https://emoji.discadia.com/emojis/2786e758-8898-4e3b-8b54-b3919aea471a.PNG",
-        "yoru": "https://emoji.discadia.com/emojis/c19223d9-5c77-448a-bdd8-54e5af724765.PNG",
-        "fade": "https://emoji.discadia.com/emojis/f6cf98e0-6c7f-4577-b623-4bc02295e556.PNG",
-        "reyna": "https://emoji.discadia.com/emojis/6b23e9f8-74e2-487e-b29f-86e9324585ae.PNG",
-        "omen": "https://emoji.discadia.com/emojis/22796c30-232d-4cb6-9be9-f9eb5d681a0b.PNG",
-        "brimstone": "https://emoji.discadia.com/emojis/b7232996-34e3-4321-a539-d3edecc04df0.PNG",
-        "kayo": "https://emoji.discadia.com/emojis/f7c9f441-d4a1-4f39-9472-706372b01cda.PNG",
-        "breach": "https://emoji.discadia.com/emojis/eac4792e-e46b-4e68-9eba-f8cb5bd15b7f.PNG",
-        "sova": "https://emoji.discadia.com/emojis/1da15151-6320-4249-a07b-8ca0cf0c4e7a.PNG",
-        "killjoy": "https://emoji.discadia.com/emojis/60ee1673-3b02-451b-839f-455abc283aa2.PNG",
-        "sage": "https://emoji.discadia.com/emojis/9ed08f69-8a79-45e7-a92c-f7eaadf86296.PNG",
-        "viper": "https://emoji.discadia.com/emojis/1afc5190-8418-4ab1-95bb-81e12fcf5527.PNG",
-        "skye": "https://emoji.discadia.com/emojis/91a8df3f-f262-448f-bfe1-497e946e3c5b.PNG",
-        "jett": "https://emoji.discadia.com/emojis/59377212-8498-497d-b298-758ff54d2bd4.PNG",
-        "harbor": "https://emoji.discadia.com/emojis/fd0e7f3d-99e0-4ce6-810d-01a98661f9e2.png",
-        "gekko": "https://emoji.discadia.com/emojis/2270f0d0-8f0b-4d28-9a48-ad023c4ca2ac.png",
-        "neon": "https://emoji.discadia.com/emojis/358f33f4-afe0-4c3f-be31-e5f95d1a9832.PNG",
-        "chamber": "https://emoji.discadia.com/emojis/a994f2cb-f48b-43dc-8313-a23f39d2cdde.PNG",
-
-            //other
-    "anime": "https://emoji.discadia.com/emojis/788f3a39-7ecf-4aee-bac0-d7c0dbbf02a3.gif",
-    "dance": "https://emoji.discadia.com/emojis/9fa603df-4864-439b-b78d-544c7f78cdca.gif",
-    "smart": "https://emoji.discadia.com/emojis/45a3f5e5-be26-42bd-bbe3-14e13d2a82b3.gif",
-    "catyes": "https://emoji.discadia.com/emojis/9b48b483-f8a9-45bd-8bcf-f5b64ed01945.webp",
-    "huh": "https://emoji.discadia.com/emojis/huh.png",
-    "kekw": "https://emoji.discadia.com/emojis/d5fd8082-f98c-41df-9163-d08cb3c5c135.png",
-    "f": "https://emoji.discadia.com/emojis/4f2f6d20-94a5-44b0-924e-8cd2331f11dd.png",
-    "what": "https://emoji.discadia.com/emojis/whatthe.png",
-    "gunpoint": "https://emoji.discadia.com/emojis/2697f46a-8866-4475-b9b8-ea9a1ee4db47.png",
-    "why": "https://emoji.discadia.com/emojis/4db3729c-92a1-472b-b25d-d3a0a8a46945.png",
-    "pikalaugh": "https://emoji.discadia.com/emojis/b589f1f4-4f73-4e30-9e39-5b47dd8b7f68.PNG",
-    "fire": "https://emoji.discadia.com/emojis/09b15aed-74ae-4412-95e8-848bd1abf7e7.gif",
-    "thonk": "https://emoji.discadia.com/emojis/thonk.png",
-    "trollface": "https://emoji.discadia.com/emojis/d8c2ee15-06fa-43c5-8996-515431b746b0.webp",
-    "jerry": "https://emoji.discadia.com/emojis/7aa79b98-dda6-4e01-9869-f6100f8683fc.png",
-    "bruh": "https://emoji.discadia.com/emojis/a898c69b-048e-44b4-a837-b508a5bd1de9.png",
-    "kekyou": "https://emoji.discadia.com/emojis/757ccf41-e1f1-4243-82dc-0b662a324b94.png",
-    "pain": "https://emoji.discadia.com/emojis/bc310bc3-6cb8-4279-860d-c4fdb7162848.png",
-    "youtried": "https://emoji.discadia.com/emojis/79a2692d-6534-4eec-9369-62713a5a5c94.gif",
-    "gigachad": "https://emoji.discadia.com/emojis/667a49eb-df03-44ff-adf4-aec2c6ba5abe.PNG"
-
-  };
+  $.get("https://snippet.host/ekiscp/raw", function (data) {
+    var emojiDictionary = JSON.parse(data);
   $('.post-body').children().each(function() {
     var text = $(this).text();
     console.log(text);
@@ -1221,6 +978,7 @@ setTimeout(function () {
       $(this).children().css('align-self', 'flex-end');
     }
   });
+});
 }, 500);
 });
 $(document).ready(function () {
