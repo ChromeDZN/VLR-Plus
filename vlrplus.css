@@ -983,11 +983,12 @@ margin-left: 20px!important;
       }
   
       .emoji-modal {
-        position: absolute;
+        /* position: absolute;
         z-index: 999999999999999;
         top: 34px;
-        right: 0;
-        width: 4    00px;
+        right: 0; */
+        width: 100%;
+        margin: 5px;
         background-color: rgba(var(--shade), 0.1);
         backdrop-filter: blur(10px);
         border: 1px solid #ddd;
